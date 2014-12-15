@@ -19,6 +19,7 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 	Graphics2D g2;
 	boolean pressed = true;
 	String movement = "";
+	
 	public void paintComponent(Graphics g)
 	{
 		/*
@@ -57,7 +58,7 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 		for(int i=0; i<64; i++) //taken, not my logic
 		{
 			int j=-1, k=-1;
-			switch(Main.chessBoard[i/8][i%8])
+			switch(Movements.chessBoard[i/8][i%8])
 			{
 		
 			case "R": 
@@ -106,7 +107,7 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 		}
 		g.setColor(Color.GREEN);
 		
-		if(Main.turnC)
+		if(Movements.turnC)
 		{
 			g.drawString("White turn", 150,440);
 		}
@@ -116,7 +117,7 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 		}
 		
 		g.drawString(movement, 150,460);
-		if(Main.checkC)
+		if(Movements.checkC)
 			g.drawString("CHECK white", 150, 420);
 		
 	}
@@ -175,19 +176,16 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 				{
 				 	newMouseX = e.getX()/sizeOfSquare;
 				 	newMouseY = e.getY()/sizeOfSquare;
-				 	movement = ""+ mouseY + mouseX + newMouseY + newMouseX + Main.chessBoard[newMouseY][newMouseX];
+				 	movement = ""+ mouseY + mouseX + newMouseY + newMouseX + Movements.chessBoard[newMouseY][newMouseX];
 				 	
 				 
 				 	//System.out.print((newMouseX +" != "+ mouseX)   + " OR " +(mouseY +" != " + newMouseY + "\n"));
 				 	
 				 	if( (newMouseX != mouseX) || (mouseY != newMouseY))
 				 	{
-				 		Main.makeMove(movement);
+				 		Movements.makeMove(movement);
 				 		//System.out.println(""+ mouseY + mouseX + newMouseY + newMouseX + Main.chessBoard[newMouseY][newMouseX]);
-				 		
-				 		Main.printLetterChessBoard();
-				 		
-				 		
+				 		Movements.printLetterChessBoard();
 				 	}else
 				 		System.out.print("\n");
 				 		pressed = false;
