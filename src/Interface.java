@@ -5,8 +5,6 @@ import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.io.IOException;
-import java.util.Arrays;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -14,6 +12,10 @@ import javax.swing.JPanel;
 
 public class Interface extends JPanel implements MouseListener, MouseMotionListener{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int mouseX = 5,mouseY = 5, newMouseX = 5,newMouseY = 5;
 	int sizeOfSquare = 50;
 	Graphics2D g2;
@@ -32,7 +34,7 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
 		Image chPieces;
-		chPieces = new ImageIcon("C:/Users/eolochr/Documents/own/code/Ch/ChessPieces.png").getImage();
+		chPieces = new ImageIcon("C:/Users/eolochr/Desktop/backup/own/code/Ch/ChessPieces.png").getImage();
 		for(int x=0; x<8; x++)
 		{
 			for(int y=0; y<8;y++)
@@ -118,7 +120,10 @@ public class Interface extends JPanel implements MouseListener, MouseMotionListe
 		
 		g.drawString(movement, 150,460);
 		if(Movements.checkC)
-			g.drawString("CHECK white", 150, 420);
+		{
+			g.drawString("Check white", 240, 440);
+		}
+			
 		
 	}
 
