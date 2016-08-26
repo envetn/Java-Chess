@@ -1,8 +1,5 @@
-import java.util.Arrays;
-import java.util.Random;
+import javax.swing.*;
 import java.util.Scanner;
-
-import javax.swing.JFrame;
 
 //import javax.swing.*;
 public class Main 
@@ -29,22 +26,21 @@ public class Main
     {
     	u_interface = new Interface();
     	movement = new Movements();
-    	 Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
     	 
-    	 String userInput = "";
 		JFrame frame = new JFrame();
 		
 		frame.add(u_interface);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(500, 500);
-		frame.show();
+		frame.setVisible(true);
 		
-		
-		while(1==1)
-		{
-			Movements.makeMove(in.nextLine());
-		}
-		
+//
+//		while(1==1)
+//		{
+//			Movements.makeMove(in.nextLine());
+//		}
+//
     }
 }

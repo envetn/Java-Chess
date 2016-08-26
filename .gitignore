@@ -1,0 +1,16 @@
+*.bak
+.settings/
+.classpath
+.pmd
+.project
+.prefs
+*.*~
+build.properties
+bin/
+.checkstyle
+test-output/
+*.iml
+.idea/
+*.class
+
+
